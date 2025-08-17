@@ -1,176 +1,153 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comentarios en Tadoku — Notas estructuradas</title>
-  <meta name="description" content="Resumen limpio y estructurado de apuntes sobre Tadoku, input comprensible, lectura extensiva e intensiva, y plan por idioma." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comentarios en Tadoku — Apuntes</title>
+  <meta name="description" content="Notas sobre tadoku, extensive vs intensive reading, Beniko Mason y Stephen Krashen.">
   <style>
-    :root {
-      --bg: #0f172a;          /* slate-900 */
-      --panel: #111827;       /* gray-900 */
-      --soft: #1f2937;        /* gray-800 */
-      --text: #e5e7eb;        /* gray-200 */
-      --muted: #94a3b8;       /* slate-400 */
-      --accent: #38bdf8;      /* sky-400 */
-      --accent-soft: rgba(56, 189, 248, 0.15);
+    :root{
+      --bg:#0b0b10; --panel:#131320; --ink:#e9e9f1; --muted:#a7a7bd; --accent:#9ae6b4; --line:#22223a;
     }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 100% -10%, rgba(56,189,248,0.08), transparent 60%),
-                  radial-gradient(1000px 600px at -20% 120%, rgba(99,102,241,0.08), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    .container {
-      max-width: 900px;
-      padding: 2.5rem 1.25rem 4rem;
-      margin: 0 auto;
-    }
-    header {
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
-      margin: 0.2rem 0 0.6rem;
-      letter-spacing: 0.2px;
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 0.98rem;
-      margin-bottom: 1.25rem;
-    }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(148,163,184,0.15);
-      border-radius: 16px;
-      padding: 1.25rem 1.1rem;
-      margin: 1rem 0 1.1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-    h2 { font-size: 1.2rem; margin: 0 0 0.2rem; }
-    h3 { font-size: 1.05rem; margin: 0.6rem 0 0.2rem; }
-    p { margin: 0.5rem 0; }
-    ul { padding-left: 1.2rem; margin: 0.4rem 0; }
-    li { margin: 0.35rem 0; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .video {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(148,163,184,0.15);
-      background: #000;
-      margin-top: 0.6rem;
-    }
-    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    blockquote {
-      margin: 0.6rem 0;
-      padding: 0.8rem 1rem;
-      background: var(--accent-soft);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      color: var(--text);
-    }
-    .tag {
-      display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px;
-      background: #0b1220; border: 1px solid rgba(148,163,184,0.18); color: var(--muted);
-      font-size: 0.78rem; margin-right: 0.4rem; margin-top: 0.2rem;
-    }
-    .grid { display: grid; gap: 0.9rem; grid-template-columns: 1fr; }
-    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
-    footer { margin-top: 2rem; text-align: center; color: var(--muted); font-size: 0.9rem; }
-    .small { color: var(--muted); font-size: 0.92rem; }
-    .muted { color: var(--muted); }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 0.88em; background: #0b1220; padding: 0.06rem 0.35rem; border-radius: 6px; border: 1px solid rgba(148,163,184,0.25); }
+    html,body{background:var(--bg); color:var(--ink); margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, sans-serif; line-height:1.65}
+    .wrap{max-width:960px; margin:auto; padding:32px 20px}
+    header{margin-bottom:24px}
+    h1{font-size: clamp(1.6rem, 3vw, 2.2rem); margin:0 0 8px 0}
+    h2{font-size: clamp(1.2rem, 2.4vw, 1.6rem); margin:32px 0 12px}
+    h3{font-size:1.05rem; margin:20px 0 10px; color:var(--accent)}
+    p, li{color:var(--ink)}
+    a{color:#8ecaff; text-decoration: none}
+    a:hover{text-decoration: underline}
+    .panel{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 18px}
+    .grid{display:grid; gap:14px}
+    @media (min-width:780px){ .grid-2{grid-template-columns:1fr 1fr} }
+    .tag{display:inline-block; border:1px solid var(--line); padding:2px 8px; border-radius:999px; font-size:.8rem; color:var(--muted)}
+    blockquote{border-left:4px solid var(--accent); margin:14px 0; padding:10px 14px; background:#0f0f1a; color:var(--ink)}
+    .meta{color:var(--muted); font-size:.95rem}
+    ul{margin:8px 0 8px 20px}
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px}
+    .dim{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .dim .tag{background:#0f0f1a}
+    .note{color:var(--muted); font-size:.92rem}
+    .video{aspect-ratio:16/9; width:100%; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    iframe{width:100%; height:100%; border:0}
+    ol{margin:8px 0 8px 20px}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
-      <div class="tag">多読多聴</div>
       <h1>Comentarios en Tadoku</h1>
-      <p class="subtitle">Notas organizadas a partir del vídeo y del enfoque de <em>comprehensible input</em>.</p>
+      <div class="meta">Apuntes de un vídeo y lectura relacionada</div>
     </header>
 
-    <section class="card" id="video">
-      <h2>Vídeo original</h2>
-      <p><a href="https://www.youtube.com/watch?v=O7tYodOIm6g" target="_blank" rel="noopener">https://www.youtube.com/watch?v=O7tYodOIm6g</a></p>
+    <!-- 1) Enlace y vídeo -->
+    <section class="panel">
+      <h2>Referencia del vídeo</h2>
+      <p>
+        <a href="https://www.youtube.com/watch?v=O7tYodOIm6g" target="_blank" rel="noopener">
+          https://www.youtube.com/watch?v=O7tYodOIm6g
+        </a>
+      </p>
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/O7tYodOIm6g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/O7tYodOIm6g"
+          title="Video de YouTube: Tadoku"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </section>
 
-    <section class="card" id="marco">
-      <h2>Marco y autores</h2>
-      <div class="grid">
-        <div>
-          <h3>Stephen Krashen — <span class="muted">extensive vs. intensive reading</span></h3>
-          <p>Hipótesis del input comprensible: aprender una lengua sucede cuando el input es comprensible y ligeramente por encima del nivel actual.</p>
-          <blockquote>
-            “Linguistic competence is only advanced when language is subconsciously acquired, and conscious learning cannot be used as a source of spontaneous language production.”
-          </blockquote>
-          <p class="small">Fuente de contexto: Input hypothesis (Wikipedia).</p>
+    <!-- 2) Ideas base (Krashen / Mason / 多読多聴) -->
+    <section>
+      <h2>Ideas base</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Stephen Krashen</h3>
+          <ul>
+            <li>“Extensive reading” vs “intensive reading”.</li>
+            <li>“The comprehensible input hypothesis”.</li>
+          </ul>
         </div>
-        <div>
-          <h3>Beniko Mason — <span class="muted">多読多聴 (tadoku &amp; tachō)</span></h3>
-          <p>Método japonés de <strong>lectura y escucha extensiva</strong> basado en el input comprensible. Enfatiza elegir materiales atractivos y fáciles de entender.</p>
+        <div class="card">
+          <h3>多読多聴（たどうたちょう） / Beniko Mason</h3>
+          <p>Beniko Mason es la japonesa que creó este método de aprendizaje y se basa en la “comprehensible input hypothesis” desarrollada por Stephen Krashen, un lingüista.</p>
         </div>
+      </div>
+
+      <blockquote>
+        «Linguistic competence is only advanced when language is subconsciously acquired, and that conscious learning cannot be used as a source of spontaneous language production.»
+      </blockquote>
+
+      <p class="note">
+        Por tanto, la lengua no se consigue con un output consciente sino que es subconscientemente obtenida, y hay dilemas en la diferencia entre “acquisition” y “learning”.
+      </p>
+
+      <p>Más: <a href="https://en.wikipedia.org/wiki/Input_hypothesis" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Input_hypothesis</a></p>
+      <div class="dim"><span class="tag">limit the amount</span></div>
+    </section>
+
+    <!-- 3) Four golden steps (tal como los anotaste) -->
+    <section>
+      <h2>Four golden steps (según mis notas)</h2>
+      <ul>
+        <li><strong>Cannot start from scratch without dictionaries</strong>, otherwise you will not challenge yourself</li>
+        <li><strong>Will not expand our vocabulary</strong></li>
+        <li><strong>Start with intensive reading</strong>, try LingQ</li>
+        <li><strong>Encourage the learner to read</strong>, assistant to review the worlds and to listen how to it is pronounced</li>
+      </ul>
+      <p>Now we have autonomy and we can use tools</p>
+    </section>
+
+    <!-- 4) Tipos de lectura (tal como lo escribiste) -->
+    <section>
+      <h2>Tipos de lectura</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Extensive reading</h3>
+          <ul>
+            <li>Leemos cosas durante <strong>largo tiempo</strong> que nos gustan y son <strong>fáciles</strong> de leer,</li>
+            <li>y sirven para ir capturando la <strong>fluidez</strong> y la <strong>comprensión</strong> del idioma en general.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Intensive reading</h3>
+          <ul>
+            <li>Leemos cosas durante <strong>poco tiempo</strong> que nos resultan <strong>difíciles</strong></li>
+            <li>y nos enfocamos en capturar los <strong>detalles</strong>, sirven para expandir el <strong>vocabulario</strong> y la <strong>gramática</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Dimensionalidades</h3>
+      <div class="dim">
+        <span class="tag">Tiempo</span>
+        <span class="tag">Disfrute</span>
+        <span class="tag">Dificultad</span>
+        <span class="tag">Finalidad</span>
       </div>
     </section>
 
-    <section class="card" id="notas-clave">
-      <h2>Notas clave del vídeo</h2>
+    <!-- 5) Conclusiones personales (mismo contenido, ordenado) -->
+    <section>
+      <h2>Conclusiones personales</h2>
       <ul>
-        <li>“Four golden steps”: <em>no se puede empezar desde cero sin diccionarios</em>; de lo contrario no te desafías y no expandes vocabulario.</li>
-        <li><strong>Comenzar con lectura intensiva</strong> puede ayudar; herramientas como <span class="kbd">LingQ</span> son útiles.</li>
-        <li>Fomentar que el estudiante <strong>lea</strong>, que un asistente <strong>revise las palabras</strong> y que se <strong>escuche la pronunciación</strong>.</li>
-        <li>Con el tiempo surge <strong>autonomía</strong> y se pueden usar más herramientas.</li>
-      </ul>
-    </section>
-
-    <section class="card" id="tipos">
-      <h2>Dos tipos de lectura</h2>
-      <ul>
-        <li><strong>Extensive reading</strong>: periodos largos, materiales que gustan y son fáciles; favorece la <em>fluidez</em> y la <em>comprensión global</em>.</li>
-        <li><strong>Intensive reading</strong>: periodos cortos, materiales difíciles; foco en <em>detalles</em>, expansión de <em>vocabulario</em> y <em>gramática</em>.</li>
-      </ul>
-      <p><strong>Dimensiones clave</strong>: tiempo · disfrute · dificultad · finalidad.</p>
-    </section>
-
-    <section class="card" id="plan">
-      <h2>Aplicación práctica por idioma</h2>
-      <ul>
-        <li><strong>Español &amp; Inglés</strong>: para ampliar vocabulario, leer <em>contenidos aparentemente difíciles</em>, no solo los de disfrute.</li>
-        <li><strong>Japonés</strong>: combinar <em>libros fáciles</em> (estructura general) con <em>difíciles</em>.</li>
-        <li><strong>Chino</strong>: empezar en serio con <em>libros de niños</em> muy fáciles.</li>
-        <li><strong>Francés &amp; Alemán</strong>:
+        <li><strong>Si quiero mejorar mi vocabulario en español y en inglés</strong>, necesito leer contenidos aparentemente difíciles, no los del puramente disfrute.</li>
+        <li><strong>Si quiero mejorar mi japonés</strong>, claramente necesito leer más libros “fáciles” aparte de los “difíciles”, porque flaqueo mucho en la estructuración general.</li>
+        <li><strong>Si quiero empezar seriamente con el chino</strong>, necesito leer libros de niños pequeños muy fáciles.</li>
+        <li><strong>Y en caso de querer mejorar con el francés y el alemán</strong>:
           <ol>
-            <li>Recuperar la <em>confianza en la pronunciación</em> y conversar para medir la expresión.</li>
-            <li><em>Reescuchar</em> lecturas de franceses/alemanes.</li>
+            <li>Recuperar la confianza de mi pronunciación y conversar con alguien en dicho idioma y ver hasta qué punto soy capaz de expresarme, tengo un miedo que flipas.</li>
+            <li>Reescuchar lecturas de franceses y alemanes.</li>
           </ol>
         </li>
       </ul>
     </section>
 
-    <section class="card" id="terminos">
-      <h2>Términos y enlaces</h2>
-      <p><span class="tag">多読多聴（たどうたちょう）</span> <span class="tag">Comprehensible Input</span> <span class="tag">Extensive Reading</span> <span class="tag">Intensive Reading</span></p>
-      <ul>
-        <li>Vídeo: <a href="https://www.youtube.com/watch?v=O7tYodOIm6g" target="_blank" rel="noopener">YouTube</a></li>
-        <li>Input hypothesis: <a href="https://en.wikipedia.org/wiki/Input_hypothesis" target="_blank" rel="noopener">Wikipedia</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      <p class="small">Notas personales reorganizadas para lectura web. Puedes copiar este archivo como <span class="kbd">index.html</span> en Netlify.</p>
+    <footer class="panel">
+      <div class="meta">Archivo de apuntes — actualizado por última vez por mí.</div>
     </footer>
   </div>
 </body>
 </html>
+
